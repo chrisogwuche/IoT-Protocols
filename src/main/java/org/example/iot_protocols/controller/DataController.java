@@ -2,7 +2,6 @@ package org.example.iot_protocols.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.example.iot_protocols.service.MqttPublisher;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -1,12 +1,14 @@
 package org.example.iot_protocols.service;
 
 import jakarta.annotation.PostConstruct;
+import lombok.extern.slf4j.Slf4j;
 import org.eclipse.paho.client.mqttv3.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 
 @Service
+@Slf4j
 public class MqttSubscriber {
 
     @Value("${mqtt.broker-url}")
@@ -38,7 +40,7 @@ public class MqttSubscriber {
             mqttClient.connect();
             mqttClient.subscribe("iot-data"); // Subscribe to a topic
         } catch (MqttException e) {
-            e.printStackTrace();
+            log.error(e.getMessage());
         }
     }
 }
